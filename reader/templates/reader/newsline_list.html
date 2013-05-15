@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for item in object_list %}
+<div class="accordion-group">
+	<div class="accordion-heading">
+		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}"><strong>{{ item.title }}</strong> - {{ item.published }}</a>
+	</div>
+	<div id="item{{ item.id }}" class="accordion-body collapse">
+		<div class="accordion-inner">
+			<p>
+				<a href="{{ item.link_id }}"><h4>{{ item.title }}</h4></a>
+			</p>
+			{{ item.summary|safe }}			
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+<script type="text/javascript">
+	$(function () {
+		$("div.accordion-heading").click(function () {
+			$(this).addClass("readed");	
+		});
+	});
+</script>
+
+
+{% endblock %}
