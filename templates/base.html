@@ -33,15 +33,15 @@
           <div class="navbar">
           	<div class="navbar-inner">
           		<ul class="nav">          		
-          			<li><a href="#">Refresh</a></li>
+          			<li id="btn_refresh"><a href="#">Refresh</a></li>
           			<li class="divider-vertical"></li>
-          			<li><a href="">Mark all as read</a></li>
+          			<li id="btn_markasread"><a href="#">Mark all as read</a></li>
           		</ul>
           	</div>
           </div>	          
           <div id="news" class="accordion">
             {% block content %}
-            {% endblock %}
+            {% endblock %}            
           </div>
         </div>
       </div>
@@ -56,6 +56,22 @@
     
     <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>    
     <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(function () {
+        $("#btn_markasread").click(function () {
+          alert("mark as read");
+        });
+        $("#btn_refresh").click(function () {
+          alert("refresh");
+        });
+        $("a.accordion-toggle").click(function () {          
+          alert('hhh');
+        });
+        $("button#btn_morenews").click(function () {
+          alert("more news");
+        });        
+      });
+    </script>
   </body>
 
 </html>

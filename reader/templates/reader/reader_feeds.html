@@ -5,14 +5,3 @@
 	<li><a href="{% url 'feed_news' item.id %}">{{ item.name }}</a></li>
 	{% endfor %}
 </ul>
-
-
-<script type="text/javascript">
-	$(function () {
-		$("ul.nav li").click(function () {
-    		$(this).parent().each(function () {
-      			$(this).toggleClass("active");
-    		});
-  		});		
-	})  
-</script>
