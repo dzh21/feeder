@@ -19,7 +19,16 @@
 {% endfor %}
 
 <div>
-	<button id="btn_morenews" type="button" class="btn">More</button>
+	{% if page_obj.has_previous %}
+	<a href="?Page={{ page_obj.previous_page_number }}">
+	<button id="btn_prevnews" type="button" class="btn">Prev</button>
+	</a>
+	{% endif %}
+	{% if page_obj.has_next %}
+	<a href="?Page={{ page_obj.next_page_number }}">
+	<button id="btn_nextnews" type="button" class="btn">Next</button>
+	</a>
+	{% endif %}
 </div>
 
 {% endblock %}
