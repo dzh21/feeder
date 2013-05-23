@@ -3,5 +3,5 @@ from reader import views
 
 urlpatterns = patterns('',		
 	url(r'^$', views.FeedView.as_view()),		
-	url(r'^feeds/(?P<pk>\d+)/$', views.NewsLineView.as_view(), name='feed_news'),	
+	url(r'^feeds/(?P<pk>\d+)/page(?P<page>\d+)?$', views.NewsLineView.as_view(), name='feed_news'),	
 )

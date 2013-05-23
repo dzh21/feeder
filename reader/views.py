@@ -5,10 +5,10 @@ class FeedView(ListView):
 	model = Feed
 
 class NewsLineView(ListView):
-	model = NewsLine
-	paginate_by = 20
+	model = NewsLine		
+	paginate_by = 10
 
 	def get_queryset(self):		
-		last_count = 100		
+		cnt = 1000			
 		
-		return NewsLine.objects.filter(feed__exact=self.kwargs['pk']).order_by('-published')[:last_count]		
+		return NewsLine.objects.filter(feed__exact=self.kwargs['pk']).order_by('-published')[:cnt]

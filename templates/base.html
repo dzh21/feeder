@@ -15,7 +15,10 @@
       }
       .sidebar-nav {
         padding: 9px 0;
-      }      
+      }            
+      .unread {
+        font-style: bold;  
+      };
     </style>
     <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet">            
   </head>
@@ -33,7 +36,7 @@
           <div class="navbar">
           	<div class="navbar-inner">
           		<ul class="nav">          		
-          			<li id="btn_refresh"><a href="#">Refresh</a></li>
+          			<li id="btn_refresh"><a href="page">Refresh</a></li>
           			<li class="divider-vertical"></li>
           			<li id="btn_markasread"><a href="#">Mark all as read</a></li>
           		</ul>
@@ -62,11 +65,11 @@
           alert("mark as read");
         });
         $("#btn_refresh").click(function () {
-          alert("refresh");
+          //alert("refresh");
         });
         $("a.accordion-toggle").click(function () {          
-          alert('hhh');
-        });        
+          $(this).addClass('readed');
+        });                        
       });
     </script>
   </body>

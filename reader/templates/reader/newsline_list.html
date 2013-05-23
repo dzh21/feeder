@@ -5,12 +5,12 @@
 {% for item in object_list %}
 <div class="accordion-group">
 	<div class="accordion-heading">
-		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}"><strong>{{ item.title }}</strong> - {{ item.published }}</a>
+		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}">{{ item.title }} - {{ item.published }}</a>
 	</div>
 	<div id="item{{ item.id }}" class="accordion-body collapse">
 		<div class="accordion-inner">
 			<p>
-				<a href="{{ item.link_id }}"><h4>{{ item.title }}</h4></a>
+				<a href="{{ item.link_id }}" target="new"><h4>{{ item.title }}</h4></a>
 			</p>
 			{{ item.summary|safe }}			
 		</div>
@@ -20,12 +20,12 @@
 
 <div>
 	{% if page_obj.has_previous %}
-	<a href="?Page={{ page_obj.previous_page_number }}">
+	<a href="page{{ page_obj.previous_page_number }}">
 	<button id="btn_prevnews" type="button" class="btn">Prev</button>
 	</a>
 	{% endif %}
 	{% if page_obj.has_next %}
-	<a href="?Page={{ page_obj.next_page_number }}">
+	<a href="page{{ page_obj.next_page_number }}">
 	<button id="btn_nextnews" type="button" class="btn">Next</button>
 	</a>
 	{% endif %}
