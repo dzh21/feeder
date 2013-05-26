@@ -13,6 +13,7 @@ class NewsLine(models.Model):
 	title = models.CharField(max_length=255)
 	summary = models.TextField()
 	link_id = models.CharField(max_length=255)
+	readed = models.BooleanField(default=False)
 
 	class Meta:	
 		unique_together = ('feed', 'link_id')
