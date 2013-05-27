@@ -18,11 +18,8 @@
         padding: 9px 0;
       }            
       .unread {
-        font-style: bold;  
-      };
-      .readed {        
-        background-color: #FAFAFA;
-      };
+        font-weight: bold;
+      };      
     </style>
     
   </head>
@@ -71,17 +68,25 @@
         $("#btn_refresh").click(function () {
           //alert("refresh");
         });
-        $("a.accordion-toggle").click(function () {        
-          $.ajax({
-            type: "POST",
-            url: "readed",
-            data: { newsid: $(this).attr('value'), csrfmiddlewaretoken: '{{ csrf_token }}'}            
-          }).done(function (message) {
-            alert(message);
-          });
+        $("a.accordion-toggle").click(function () {                  
+          if (!$(this).parent().hasClass("readed")) {            
+            $(this).parent().addClass("readed");
+            $.ajax({
+              type: "POST",
+              url: "readed",
+              data: { newsid: $(this).attr('value'), csrfmiddlewaretoken: '{{ csrf_token }}'}            
+            }).done(function (message) {
+              //alert(message);                
+            });
+          }  
         });                        
       });
     </script>
+    <style type="text/css">       
+      div.readed {        
+        background-color: #F0F0F0;
+      };
+    </style>
   </body>
 
 </html>

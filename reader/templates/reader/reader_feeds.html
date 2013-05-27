@@ -2,6 +2,6 @@
 	<li class="nav-header">Feeds</li>
 	<li class="divider"></li>
 	{% for item in feeds %}		
-	<li><a href="{% url 'feed_news' item.id %}">{{ item.name }}</a></li>
+	<li><a href="{% url 'feed_news' item.id %}">{{ item.name }} {{ news_cnt }}</a></li>
 	{% endfor %}
 </ul>

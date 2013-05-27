@@ -3,9 +3,10 @@
 {% block content %}
 
 {% for item in object_list %}
-<div class="accordion-group">
-	<div class="accordion-heading {% if item.readed %} readed {% else %} unread {% endif %}">
-		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}" value="{{ item.id }}">{{ item.title }} - {{ item.published }} {{ item.readed }}</a>
+<div class="accordion-group"> 
+	<div class="accordion-heading {% if item.readed %} readed {% endif %}">
+		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}" value="{{ item.id }}">{{ item.title }} - {{ item.published }}</a>
+		
 	</div>
 	<div id="item{{ item.id }}" class="accordion-body collapse">
 		<div class="accordion-inner">

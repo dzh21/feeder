@@ -7,7 +7,7 @@ class FeedView(ListView):
 
 class NewsLineView(ListView):
 	model = NewsLine		
-	paginate_by = 10
+	paginate_by = 20
 
 	def get_queryset(self):		
 		cnt = 1000			
@@ -20,8 +20,9 @@ def readed(request):
 		# message = "ajax! " + request.POST['newsid']
 		news_line = NewsLine.objects.get(pk=request.POST['newsid'])
 		news_line.readed = True
-		news_line.save()		
+		news_line.save()	
+		message = "OK"	
 	else:
 		message = "not ajax:/"
 
-	return HttpResponse('hello')
+	return HttpResponse(message)
