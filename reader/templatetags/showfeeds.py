@@ -8,6 +8,6 @@ def show_feeds():
 	feeds = Feed.objects.all()	
 	news_cnt = []
 	for feed in feeds:
-		newslines = NewsLine.objects.filter(feed__exact=feed.id).filter(readed__exact=False)
+		newslines = NewsLine.objects.filter(feed__exact=feed.id).exclude(readed__exact=True)
 		news_cnt.append(newslines.count())
-	return { 'feeds': feeds, 'news_cnt': news_cnt }
+	return { 'feeds': feeds, 'news_cnt': news_cnt}
