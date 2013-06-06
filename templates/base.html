@@ -62,23 +62,26 @@
     <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript" ></script>
     <script type="text/javascript">
       $(function () {
+        function make_readed(item) {
+          if (!item.parent().hasClass("readed")) {            
+            item.parent().addClass("readed");
+            $.ajax({
+              type: "POST",
+              url: "readed",
+              data: { newsid: item.attr('value'), csrfmiddlewaretoken: '{{ csrf_token }}'}            
+            }).done(function (message) {
+              //alert(message);                
+            });
+          }
+        };
         $("#btn_markasread").click(function () {
           alert("mark as read");
         });
         $("#btn_refresh").click(function () {
           //alert("refresh");
         });
-        $("a.accordion-toggle").click(function () {                  
-          if (!$(this).parent().hasClass("readed")) {            
-            $(this).parent().addClass("readed");
-            $.ajax({
-              type: "POST",
-              url: "readed",
-              data: { newsid: $(this).attr('value'), csrfmiddlewaretoken: '{{ csrf_token }}'}            
-            }).done(function (message) {
-              //alert(message);                
-            });
-          }  
+        $("a.accordion-toggle").click(function () {
+          make_readed($(this));
         });                        
       });
     </script>
