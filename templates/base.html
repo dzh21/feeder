@@ -74,6 +74,9 @@
             });
           }
         };
+        $("#btn_refresh").click(function () {
+          //alert("refresh");
+        });
         $("#btn_markasread").click(function () {
           $.ajax({
             type: "POST",
@@ -83,9 +86,7 @@
             $("#btn_refresh").trigger('click');
           });         
         });
-        $("#btn_refresh").click(function () {
-          //alert("refresh");
-        });
+        
         $("a.accordion-toggle").click(function () {
           make_readed($(this));
         });                        

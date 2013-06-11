@@ -116,7 +116,7 @@ TEMPLATE_DIRS = (
     '/home/dzh/work/feeder/templates',    
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = (    
     'south',
     'reader',
     'django.contrib.auth',

@@ -4,6 +4,9 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+import django_cron
+django_cron.autodiscover()
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'feeder.views.home', name='home'),
