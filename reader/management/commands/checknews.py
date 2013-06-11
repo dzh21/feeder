@@ -12,6 +12,7 @@ class Command(BaseCommand):
 		feeds = Feed.objects.all()		
 		for feed in feeds:						
 			d = feedparser.parse(feed.link)						
+			skip_cnt = 0
 			for item in d.entries:				
 				news_line = NewsLine()
 				news_line.feed_id = feed.id
@@ -22,6 +23,7 @@ class Command(BaseCommand):
 				try:
 					news_line.save()
 				except Exception, e:
-					print 'error: %r' % e		
-			print 'feed %s parsed' % feed.link		
+					#print 'error: %r' % e		
+					skip_cnt += 1
+			print 'feed %s parsed: add %d, skip %d' % (feed.link, len(d.entries) - skip_cnt, skip_cnt)
 				
