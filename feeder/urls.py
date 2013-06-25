@@ -1,11 +1,7 @@
 from django.conf.urls import patterns, include, url
-#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from django.contrib import admin
 admin.autodiscover()
-
-import django_cron
-django_cron.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -19,5 +15,3 @@ urlpatterns = patterns('',
     url(r'^reader/', include('reader.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
-
-#urlpatterns += staticfiles_urlpatterns()

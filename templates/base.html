@@ -37,7 +37,7 @@
           <div class="navbar">
           	<div class="navbar-inner">
           		<ul class="nav">          		
-          			<li id="btn_refresh"><a href="page">Refresh</a></li>
+          			<li id="btn_refresh"><a href="#">Refresh</a></li>
           			<li class="divider-vertical"></li>
           			<li id="btn_markasread"><a href="#">Mark all as read</a></li>
           		</ul>
@@ -75,7 +75,7 @@
           }
         };
         $("#btn_refresh").click(function () {
-          //alert("refresh");
+          location.reload();
         });
         $("#btn_markasread").click(function () {
           $.ajax({
