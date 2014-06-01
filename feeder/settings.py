@@ -1,5 +1,9 @@
 # Django settings for feeder project.
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -71,8 +75,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.    
-    '/home/dzh/work/feeder/static',
+    # Don't forget to use absolute paths, not relative paths.
+    '/home/linaro/work/feeder/static',
 )
 
 # List of finder classes that know how to find static files in
@@ -113,10 +117,10 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 
-    '/home/dzh/work/feeder/templates',    
+    '/home/linaro/work/feeder/templates',
 )
 
-INSTALLED_APPS = (    
+INSTALLED_APPS = (
     'south',
     'reader',
     'django.contrib.auth',
