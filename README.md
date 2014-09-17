@@ -1,3 +1,3 @@
 # README #
 
-RSS reader
+RSS reader (Python\Django)
