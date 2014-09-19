@@ -2,6 +2,15 @@
     <li class="nav-header">Feeds</li>
     <li class="divider"></li>
     {% for unread_cnt, item in feeds %}
-    <li><a href="{% url 'feed_news' item.id %}">{{ item.name }} ({{ unread_cnt }})</a></li>
+    <li>
+    	<a href="{% url 'feed_news' item.id %}"> 
+    		{% if item.stared %}
+  				<i class="icon-star"></i>
+  			{% else %}	
+  				<i class="icon-th-list"></i>
+  			{% endif %}	
+    		{{ item.name }} ({{ unread_cnt }})
+    	</a>
+    </li>
     {% endfor %}
 </ul>

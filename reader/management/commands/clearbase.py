@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         old_cnt = NewsLine.objects.all().count()
-        NewsLine.objects.exclude(published__gt=datetime.datetime.now() -
+        NewsLine.objects.exclude(feed__stared=True).exclude(published__gt=datetime.datetime.now() -
             datetime.timedelta(weeks=4), readed=False).delete()
         print("Lines deleted count: %d" %
             (old_cnt - NewsLine.objects.all().count()))
