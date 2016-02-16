@@ -1,4 +1,5 @@
 from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
 from .models import Feed, NewsLine
 from django.http import HttpResponse
 
@@ -48,3 +49,4 @@ def readed(request):
         message = "not ajax:/"
 
     return HttpResponse(message)
+
