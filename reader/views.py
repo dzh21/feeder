@@ -52,7 +52,7 @@ def readed(request):
 
 def checknews(request):
     if request.is_ajax():
-        management.call_command('checknew', verbosity=0, interactive=False)
+        management.call_command('checknews', verbosity=0, interactive=False)
         message = "readed all - OK "
     else:
         message = "not ajax:/"
