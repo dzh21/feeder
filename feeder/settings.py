@@ -15,13 +15,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'reader.db',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'dboiinjdpngkh5',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'USER': 'vwgikhajtpytbw',
+        'PASSWORD': 'QRLbcJqMA0uq3k5iT-0tHe92ec',
+        'HOST': 'ec2-107-21-223-72.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '5432',                      # Set to empty string for default.
     }
 }
 
@@ -120,8 +120,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
-INSTALLED_APPS = (
-    'south',
+INSTALLED_APPS = (    
     'reader',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -162,3 +161,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from settings_local import *
+except ImportError:
+    pass

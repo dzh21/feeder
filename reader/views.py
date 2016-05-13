@@ -16,8 +16,7 @@ class NewsLineView(ListView):
 
     def get_queryset(self):
         cnt = 1000
-        return NewsLine.objects.filter(feed__exact=self.kwargs['pk']).\
-            order_by('-published')[:cnt]
+        return NewsLine.objects.filter(feed__exact=self.kwargs['pk']).order_by('-published')[:cnt]
 
 
 def readedall(request):
@@ -25,8 +24,7 @@ def readedall(request):
         # feedid from url
         m = re.search(r'/\d+/', request.path)
         feedid = m.group(0)[1:-1]
-        news_lines = NewsLine.objects.filter(feed__exact=feedid). \
-                                        exclude(readed__exact=True)
+        news_lines = NewsLine.objects.filter(feed__exact=feedid).exclude(readed__exact=True)
         for line in news_lines:
             line.readed = True
             line.save()
@@ -49,4 +47,3 @@ def readed(request):
         message = "not ajax:/"
 
     return HttpResponse(message)
-
