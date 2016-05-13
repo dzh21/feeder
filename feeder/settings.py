@@ -16,11 +16,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'dboiinjdpngkh5',                      # Or path to database file if using sqlite3.
+        'NAME': 'd6jmfd1evvscgu',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'vwgikhajtpytbw',
-        'PASSWORD': 'QRLbcJqMA0uq3k5iT-0tHe92ec',
-        'HOST': 'ec2-107-21-223-72.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER': 'zjhggdqayhohui',
+        'PASSWORD': ' TJ2FzyaPw1rHy156BDnGulgyK0',
+        'HOST': 'ec2-54-228-219-2.eu-west-1.compute.amazonaws.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
