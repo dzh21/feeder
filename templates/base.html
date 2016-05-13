@@ -39,6 +39,8 @@
           			<li id="btn_refresh"><a href="#">Refresh</a></li>
           			<li class="divider-vertical"></li>
           			<li id="btn_markasread"><a href="#">Mark all as read</a></li>
+                <li class="divider-vertical"></li>
+                <li id="btn_checknew"><a href="#">Check fresh news</a></li>
           		</ul>
           	</div>
           </div>	          
@@ -86,6 +88,16 @@
           });         
         });
         
+        $("#btn_checknew").click(function () {
+          $.ajax({
+            type: "POST",
+            url: "checknew",
+            data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
+          }).done(function (message) {                      
+            $("#btn_refresh").trigger('click');
+          });         
+        });
+
         $("a.accordion-toggle").click(function () {
           make_readed($(this));
         });                        

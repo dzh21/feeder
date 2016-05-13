@@ -7,4 +7,5 @@ urlpatterns = patterns('',
         views.NewsLineView.as_view(), name='feed_news'),
     url(r'^feeds/\d+/readed$', views.readed),
     url(r'^feeds/\d+/readedall$', views.readedall),
+    url(r'^feeds/checknew$', views.checknew),
 )

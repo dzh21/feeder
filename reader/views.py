@@ -2,6 +2,7 @@ from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from .models import Feed, NewsLine
 from django.http import HttpResponse
+from django.core import management
 
 import re
 
@@ -47,3 +48,12 @@ def readed(request):
         message = "not ajax:/"
 
     return HttpResponse(message)
+
+def checknew(request):
+    if request.is_ajax():
+        management.call_command('checknew', verbosity=0, interactive=False)
+        message = "readed all - OK "
+    else:
+        message = "not ajax:/"
+
+    return HttpResponse(message)    
