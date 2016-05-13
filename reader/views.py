@@ -49,11 +49,12 @@ def readed(request):
 
     return HttpResponse(message)
 
-def checknew(request):
+
+def checknews(request):
     if request.is_ajax():
         management.call_command('checknew', verbosity=0, interactive=False)
         message = "readed all - OK "
     else:
         message = "not ajax:/"
 
-    return HttpResponse(message)    
+    return HttpResponse(message)

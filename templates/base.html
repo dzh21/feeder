@@ -40,7 +40,7 @@
           			<li class="divider-vertical"></li>
           			<li id="btn_markasread"><a href="#">Mark all as read</a></li>
                 <li class="divider-vertical"></li>
-                <li id="btn_checknew"><a href="#">Check fresh news</a></li>
+                <li id="btn_checknews"><a href="#">Check fresh news</a></li>
           		</ul>
           	</div>
           </div>	          
@@ -88,10 +88,10 @@
           });         
         });
         
-        $("#btn_checknew").click(function () {
+        $("#btn_checknews").click(function () {
           $.ajax({
             type: "POST",
-            url: "checknew",
+            url: "checknews",
             data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
           }).done(function (message) {                      
             $("#btn_refresh").trigger('click');
