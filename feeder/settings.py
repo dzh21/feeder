@@ -121,6 +121,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (    
+    'dj_static',    
     'reader',
     'django.contrib.auth',
     'django.contrib.contenttypes',
