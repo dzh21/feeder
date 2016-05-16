@@ -3,4 +3,4 @@ argparse==1.2.1
 feedparser==5.2.1
 wsgiref==0.1.2
 psycopg2
-
+gunicorn
