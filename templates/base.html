@@ -92,7 +92,7 @@
         $("#btn_checknews").click(function () {
           $.ajax({
             type: "POST",
-            url: "checknews",
+            url: "{% url 'checknews' %}",
             data: { csrfmiddlewaretoken: '{{ csrf_token }}' }
           }).done(function (message) {                      
             $("#btn_refresh").trigger('click');
