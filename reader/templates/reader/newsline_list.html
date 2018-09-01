@@ -3,33 +3,33 @@
 {% block content %}
 
 {% for item in object_list %}
-<div class="accordion-group"> 
-	<div class="accordion-heading {% if item.readed %} readed {% endif %}">
-		<a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}" value="{{ item.id }}">{{ item.title }} - {{ item.published }}</a>
-		
-	</div>
-	<div id="item{{ item.id }}" class="accordion-body collapse">
-		<div class="accordion-inner">
-			<p>
-				<a href="{{ item.link_id }}" target="new"><h4>{{ item.title }}</h4></a>
-			</p>
-			{{ item.summary|safe }}			
-		</div>
-	</div>
+<div class="accordion-group">
+    <div class="accordion-heading {% if item.readed %} readed {% endif %}">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#news" href="#item{{ item.id }}" value="{{ item.id }}">{{ item.title }} - {{ item.published }}</a>
+
+    </div>
+    <div id="item{{ item.id }}" class="accordion-body collapse">
+        <div class="accordion-inner">
+            <p>
+                <a href="{{ item.link_id }}" target="new"><h4>{{ item.title }}</h4></a>
+            </p>
+            {{ item.summary|safe }}	
+        </div>
+    </div>
 </div>
 {% endfor %}
 
 <div>
-	{% if page_obj.has_previous %}
-	<a href="page{{ page_obj.previous_page_number }}">
-	<button id="btn_prevnews" type="button" class="btn">Prev</button>
-	</a>
-	{% endif %}
-	{% if page_obj.has_next %}
-	<a href="page{{ page_obj.next_page_number }}">
-	<button id="btn_nextnews" type="button" class="btn">Next</button>
-	</a>
-	{% endif %}
+    {% if page_obj.has_previous %}
+    <a href="page{{ page_obj.previous_page_number }}">
+    <button id="btn_prevnews" type="button" class="btn">Prev</button>
+    </a>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <a href="page{{ page_obj.next_page_number }}">
+    <button id="btn_nextnews" type="button" class="btn">Next</button>
+    </a>
+    {% endif %}
 </div>
 
 {% endblock %}
